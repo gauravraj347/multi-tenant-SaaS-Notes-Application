@@ -1,0 +1,9 @@
+# Don't include these in the Vercel build
+node_modules/
+.git/
+.gitignore
+README.md
+.vercel/
+
+# But make sure to include the public directory
+!public/

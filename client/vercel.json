@@ -5,10 +5,18 @@
       "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "build"
+        "distDir": "build",
+        "env": {
+          "PUBLIC_URL": "/"
+        }
       }
     }
   ],
+  "build": {
+    "env": {
+      "NODE_VERSION": "18.x"
+    }
+  },
   "routes": [
     {
       "src": "/static/(.*)",
@@ -23,8 +31,8 @@
       "dest": "/manifest.json"
     },
     {
-      "src": "/logo192.png",
-      "dest": "/logo192.png"
+      "src": "/logo(192|512).png",
+      "dest": "/logo$1.png"
     },
     {
       "src": "/logo512.png",
