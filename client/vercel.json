@@ -8,14 +8,17 @@
         "distDir": "build",
         "env": {
           "PUBLIC_URL": "/"
-        }
+        },
+        "includeFiles": ["public/**", "src/**"]
       }
     }
   ],
   "build": {
     "env": {
-      "NODE_VERSION": "18.x"
-    }
+      "NODE_VERSION": "18.x",
+      "CI": "false"
+    },
+    "command": "npm install && npm run build"
   },
   "routes": [
     {
